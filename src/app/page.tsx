@@ -149,12 +149,12 @@ export default function HomePage() {
             </motion.div>
           </div>
 
-          {/* Hero Visual */}
+          {/* Hero Visual - Desktop */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.8 }}
-            className="max-w-5xl mx-auto mt-20"
+            className="hidden md:block max-w-5xl mx-auto mt-20"
           >
             <div className="relative rounded-2xl overflow-hidden border border-zinc-200 dark:border-zinc-800 bg-white/80 dark:bg-zinc-900/80 backdrop-blur shadow-xl dark:shadow-none">
               <div className="aspect-[16/9] p-6 flex gap-6">
@@ -168,7 +168,7 @@ export default function HomePage() {
                   </div>
                 </div>
                 {/* Chat Area */}
-                <div className="w-[320px] hidden md:flex flex-col bg-zinc-100 dark:bg-zinc-800/30 rounded-xl p-5">
+                <div className="w-[320px] flex flex-col bg-zinc-100 dark:bg-zinc-800/30 rounded-xl p-5">
                   <div className="space-y-4 flex-1">
                     <div className="bg-zinc-200 dark:bg-zinc-700/50 rounded-2xl rounded-tl-sm p-4 text-sm text-zinc-800 dark:text-zinc-200">
                       Hello! I&apos;m Alex, your AI English teacher. What would you like to practice today?
@@ -184,6 +184,34 @@ export default function HomePage() {
               </div>
               {/* Glow */}
               <div className="absolute inset-0 bg-gradient-to-t from-indigo-500/10 to-transparent pointer-events-none" />
+            </div>
+          </motion.div>
+
+          {/* Hero Visual - Mobile */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5, duration: 0.8 }}
+            className="md:hidden mt-10 px-4"
+          >
+            <div className="rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white/90 dark:bg-zinc-900/90 backdrop-blur-xl shadow-xl overflow-hidden">
+              {/* Mic Section */}
+              <div className="text-center py-8 px-6 bg-gradient-to-b from-zinc-50 to-white dark:from-zinc-800/50 dark:to-zinc-900/50">
+                <div className="w-24 h-24 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 mx-auto mb-4 flex items-center justify-center shadow-xl shadow-indigo-500/40">
+                  <Mic size={40} className="text-white" />
+                </div>
+                <p className="text-zinc-700 dark:text-zinc-300 font-medium">AI Teacher Ready</p>
+                <p className="text-zinc-500 dark:text-zinc-500 text-sm mt-1">Tap to start speaking</p>
+              </div>
+              {/* Mini Chat Preview */}
+              <div className="px-4 py-4 space-y-3 border-t border-zinc-100 dark:border-zinc-800">
+                <div className="bg-zinc-100 dark:bg-zinc-800 rounded-2xl rounded-tl-sm px-4 py-3 text-sm text-zinc-700 dark:text-zinc-300 max-w-[85%]">
+                  Hello! What would you like to practice?
+                </div>
+                <div className="bg-gradient-to-r from-indigo-500 to-purple-600 rounded-2xl rounded-tr-sm px-4 py-3 text-sm text-white ml-auto max-w-[75%]">
+                  Job interview practice
+                </div>
+              </div>
             </div>
           </motion.div>
         </section>
